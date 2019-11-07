@@ -49,7 +49,7 @@ public class MenuCentro {
         System.out.print("Introduzca el número de electores: ");
         Boolean nonInt = true;
         int electores = 0;
-        while (nonInt) {
+        do {
         
             String electoresString = ENTRADA.nextLine();
             try {
@@ -71,7 +71,7 @@ public class MenuCentro {
             
             }
         
-        }
+        } while (nonInt);
         
         Centro centro = new Centro(nombre, electores);
         return Utils.CentroArrayPush(centro, centros);
@@ -86,7 +86,7 @@ public class MenuCentro {
         
         muestraMenuPrincipal();
         
-        while (noSalir) {
+        do {
 
             opcion = ENTRADA.nextLine();
             switch (opcion) {
@@ -105,6 +105,7 @@ public class MenuCentro {
             
                 case "3":
                     
+                    ENTRADA.close();
                     noSalir = false;
                     break;
                     
@@ -114,7 +115,7 @@ public class MenuCentro {
             
             }
             
-        }
+        } while (noSalir);
         
         return newCentros;
             

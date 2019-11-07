@@ -36,7 +36,7 @@ public class Politics {
 
         muestraMenuPrincipal();
         
-        while (noSalir) {
+        do {
         
             opcion = entrada.nextLine();
             switch (opcion) {
@@ -72,6 +72,7 @@ public class Politics {
                 case "5":
                     
                     noSalir = false;
+                    entrada.close();
                     System.out.println("Fin del programa, hasta la próxima!!!");
                     break;
                     
@@ -81,7 +82,7 @@ public class Politics {
             
             }
         
-        }
+        } while (noSalir);
         
     }
     

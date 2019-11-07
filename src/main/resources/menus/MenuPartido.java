@@ -63,7 +63,7 @@ public class MenuPartido {
         
         muestraMenuPrincipal();
         
-        while (noSalir) {
+        do {
 
             opcion = ENTRADA.nextLine();
             switch (opcion) {
@@ -82,6 +82,7 @@ public class MenuPartido {
             
                 case "3":
                     
+                    ENTRADA.close();
                     noSalir = false;
                     break;
                     
@@ -91,7 +92,7 @@ public class MenuPartido {
             
             }
             
-        }
+        } while (noSalir);
         
         return newPartidos;
             

@@ -39,7 +39,7 @@ public class Partido {
     public void print() {
     
         System.out.println("------------------------------");
-        System.out.println("Centro: " + this.nombre);
+        System.out.println("Partido: " + this.nombre);
         System.out.println("Siglas: " + this.siglas);
     
     }
