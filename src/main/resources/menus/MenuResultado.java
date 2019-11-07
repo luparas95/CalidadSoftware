@@ -29,7 +29,7 @@ public class MenuResultado {
 
         System.out.print("Escoge centro: ");
         
-        while (opcionNoValida) {
+        do {
         
             String opcionString = ENTRADA.nextLine();
             try {
@@ -53,7 +53,7 @@ public class MenuResultado {
             
             }
         
-        }
+        } while (opcionNoValida);
         
         return centroEscogido;
     
@@ -76,7 +76,7 @@ public class MenuResultado {
 
         System.out.print("Escoge centro: ");
         
-        while (opcionNoValida) {
+        do {
         
             String opcionString = ENTRADA.nextLine();
             try {
@@ -100,7 +100,7 @@ public class MenuResultado {
             
             }
         
-        }
+        } while (opcionNoValida);
         
         return partidoEscogido;
     
@@ -115,7 +115,7 @@ public class MenuResultado {
 
         System.out.print("Introduce número de votos: ");
         
-        while (opcionNoValida) {
+        do {
         
             String opcionString = ENTRADA.nextLine();
             try {
@@ -139,7 +139,7 @@ public class MenuResultado {
             
             }
         
-        }
+        } while (opcionNoValida);
         
         return votos;
     
@@ -213,6 +213,7 @@ public class MenuResultado {
         
         }
         
+        ENTRADA.close();
         return newResultados;
     
     }
