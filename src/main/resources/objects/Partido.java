@@ -5,6 +5,8 @@ public class Partido {
     private String nombre;
     private String siglas;
     
+    // esto es un comentario para probar el git
+    
     public Partido(String nombre, String siglas) {
     
         this.nombre = nombre;
