@@ -31,10 +31,9 @@ public class MenuResultado {
         
         do {
         
-            String opcionString = ENTRADA.nextLine();
             try {
                 
-                int opcion = Integer.parseInt(opcionString);
+                int opcion = ENTRADA.nextInt();
                 
                 if (opcion < 1 || opcion > centros.length) {
                 
@@ -74,14 +73,13 @@ public class MenuResultado {
 
         }
 
-        System.out.print("Escoge centro: ");
+        System.out.print("Escoge partido: ");
         
         do {
         
-            String opcionString = ENTRADA.nextLine();
             try {
                 
-                int opcion = Integer.parseInt(opcionString);
+                int opcion = ENTRADA.nextInt();
                 
                 if (opcion < 1 || opcion > partidos.length) {
                 
@@ -117,10 +115,9 @@ public class MenuResultado {
         
         do {
         
-            String opcionString = ENTRADA.nextLine();
             try {
                 
-                int opcion = Integer.parseInt(opcionString);
+                int opcion = ENTRADA.nextInt();
                 int votosDisponibles = votosDisponibles(resultados, centro);
                 if (opcion < 0 || opcion > votosDisponibles) {
                 

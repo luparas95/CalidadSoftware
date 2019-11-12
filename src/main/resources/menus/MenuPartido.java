@@ -58,29 +58,29 @@ public class MenuPartido {
     public static Partido[] muestraMenuPartido(Partido partidos[]) {
     
         Boolean noSalir = true;
-        String opcion = "";
+        int opcion;
         Partido newPartidos[] = partidos;
         
         muestraMenuPrincipal();
         
         do {
 
-            opcion = ENTRADA.nextLine();
+            opcion = ENTRADA.nextInt();
             switch (opcion) {
             
-                case "1":
+                case 1:
                     
                     muestraPartidos(newPartidos);
                     muestraMenuPrincipal();
                     break;
             
-                case "2":
+                case 2:
                     
                     newPartidos = creaPartido(newPartidos);
                     muestraMenuPrincipal();
                     break;
             
-                case "3":
+                case 3:
                     
                     ENTRADA.close();
                     noSalir = false;
