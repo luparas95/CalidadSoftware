@@ -10,6 +10,8 @@ import main.resources.menus.MenuCentro;
 import main.resources.menus.MenuPartido;
 import main.resources.menus.MenuResultado;
 
+// Comentario para explicar el git a Alvaro
+
 public class Politics {
     
     private static void muestraMenuPrincipal() {
