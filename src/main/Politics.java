@@ -31,7 +31,7 @@ public class Politics {
         
         Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
-        String opcion = "";
+        int opcion;
         Centro centros[] = new Centro[0];
         Partido partidos[] = new Partido[0];
         Resultado resultados[] = new Resultado[0];
@@ -40,28 +40,28 @@ public class Politics {
         
         do {
         
-            opcion = entrada.nextLine();
+            opcion = entrada.nextInt();
             switch (opcion) {
             
-                case "1":
+                case 1:
                     
                     centros = MenuCentro.muestraMenuCentro(centros);
                     muestraMenuPrincipal();
                     break;
             
-                case "2":
+                case 2:
                     
                     partidos = MenuPartido.muestraMenuPartido(partidos);
                     muestraMenuPrincipal();
                     break;
             
-                case "3":
+                case 3:
                     
                     resultados = MenuResultado.insertaTripleta(centros, partidos, resultados);
                     muestraMenuPrincipal();
                     break;
             
-                case "4":
+                case 4:
                     
                     for (Resultado resultado:resultados) {
 
@@ -71,7 +71,7 @@ public class Politics {
                     muestraMenuPrincipal();
                     break;
             
-                case "5":
+                case 5:
                     
                     noSalir = false;
                     entrada.close();

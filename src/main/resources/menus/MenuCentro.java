@@ -81,29 +81,29 @@ public class MenuCentro {
     public static Centro[] muestraMenuCentro(Centro centros[]) {
     
         Boolean noSalir = true;
-        String opcion = "";
+        int opcion;
         Centro newCentros[] = centros;
         
         muestraMenuPrincipal();
         
         do {
 
-            opcion = ENTRADA.nextLine();
+            opcion = ENTRADA.nextInt();
             switch (opcion) {
             
-                case "1":
+                case 1:
                     
                     muestraCentros(newCentros);
                     muestraMenuPrincipal();
                     break;
             
-                case "2":
+                case 2:
                     
                     newCentros = creaCentro(newCentros);
                     muestraMenuPrincipal();
                     break;
             
-                case "3":
+                case 3:
                     
                     ENTRADA.close();
                     noSalir = false;
