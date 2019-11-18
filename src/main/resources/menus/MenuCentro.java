@@ -10,6 +10,10 @@ public class MenuCentro {
     
     private static final Scanner ENTRADA = new Scanner(System.in);
     
+    /**
+     * Método que imprime en pantalla las opciones del menu principal de la clase Centros
+     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+     */
     private static void muestraMenuPrincipal() {
     
         System.out.println("------------------------------");
@@ -19,7 +23,12 @@ public class MenuCentro {
         System.out.print("Introduzca la opción deseada: ");
     
     }
-
+    
+    /**
+    * Método que imprime por pantalla los atributos de todos los objetos Centro guardados
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
+    */
     private static void muestraCentros(Centro centros[]) {
 
         System.out.println("------------------------------");
@@ -39,7 +48,13 @@ public class MenuCentro {
         }
     
     }
-
+    
+    /**
+    * Método que crea un nuevo objeto centro y lo agrega al arreglo donde son almacenados
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
+    * @return Centro[] *por definir*
+    */
     private static Centro[] creaCentro(Centro centros[]) {
     
         System.out.println("------------------------------");
@@ -78,6 +93,12 @@ public class MenuCentro {
     
     }
 
+    /**
+    * Método que ejecuta las opciones del menu principal
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
+    * @return Centro[] arreglo usado para almacenar todos los objetos Centro 
+    */
     public static Centro[] muestraMenuCentro(Centro centros[]) {
     
         Boolean noSalir = true;
