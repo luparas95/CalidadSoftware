@@ -54,10 +54,10 @@ public class MenuCentro {
     }
     
     /**
-    * Método que crea un nuevo objeto centro y lo agrega al arreglo donde son almacenados
+    * Método que crea un nuevo objeto Centro y lo agrega al arreglo donde son almacenados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
-    * @return Centro[] *por definir*
+    * @return Centro[] arreglo usado para almacenar todos los objetos Centro
     */
     private static Centro[] creaCentro(Centro centros[]) {
     
@@ -98,7 +98,7 @@ public class MenuCentro {
     }
 
     /**
-    * Método que ejecuta las opciones del menu principal
+    * Método que implementa las opciones del menu principal
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
     * @return Centro[] arreglo usado para almacenar todos los objetos Centro 
