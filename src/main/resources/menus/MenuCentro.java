@@ -6,6 +6,10 @@ import main.resources.objects.Centro;
 
 import main.resources.utils.Utils;
 
+/**
+ * Esta clase contiene el menu de la clase Centro y la implementacion de sus metodos
+ * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+ */
 public class MenuCentro {
     
     private static final Scanner ENTRADA = new Scanner(System.in);
