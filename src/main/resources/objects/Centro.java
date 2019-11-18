@@ -24,9 +24,9 @@ public class Centro {
     }
     
     /**
-    * Metodo que devuelve el nombre del centro
+    * Método que devuelve el nombre del centro
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @return this.nombre es el atributo nombre del centro en cuestion 
+    * @return this.nombre es el atributo nombre del centro
     */
     public String getNombre() {
     
@@ -35,9 +35,9 @@ public class Centro {
     }
     
     /**
-    * Metodo que devuelve el numero de electores del centro
+    * Método que devuelve el numero de electores del centro
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @return this.electores es el atributo electores del centro en cuestion 
+    * @return this.electores es el numero de electores del centro
     */
     public int getElectores() {
     
@@ -46,7 +46,7 @@ public class Centro {
     }
     
     /**
-    * Metodo establece un nuevo nombre para el centro
+    * Método que establece un nuevo nombre para el centro
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param nombre parametro que define el nuevo nombre del centro
     */
@@ -57,7 +57,7 @@ public class Centro {
     }
     
     /**
-    * Metodo establece una nueva cantidad de electores para el centro
+    * Método que establece una nueva cantidad de electores para el centro
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param electores parametro que define la nueva cantidad de electores del centro
     */
