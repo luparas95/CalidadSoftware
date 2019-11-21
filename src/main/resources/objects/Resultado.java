@@ -5,7 +5,7 @@ package main.resources.objects;
  * la cantidad de votos que el partido ha obtenido en dicho centro
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class Resultado {
+public class Resultado implements Comparable<Resultado> {
 
     //Campos de la clase
     private Centro centro;
@@ -103,6 +103,13 @@ public class Resultado {
         System.out.println("Partido: " + this.partido.getNombre());
         System.out.println("Votos: " + this.votos);
     
+    }
+    
+    @Override
+    public int compareTo(Resultado r) {
+
+        return getCentro().getNombre().compareTo(r.getCentro().getNombre());
+
     }
     
 }

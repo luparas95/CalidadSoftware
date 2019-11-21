@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
@@ -31,9 +32,9 @@ public class Politics {
         Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
-        Centro centros[] = new Centro[0];
-        Partido partidos[] = new Partido[0];
-        Resultado resultados[] = new Resultado[0];
+        Centro[] centros = {};
+        Partido[] partidos = {};
+        Resultado[] resultados = {};
 
         muestraMenuPrincipal();
         
@@ -64,6 +65,7 @@ public class Politics {
 
                     case 4:
 
+                        Arrays.sort(resultados);
                         for (Resultado resultado:resultados) {
 
                             resultado.print();
