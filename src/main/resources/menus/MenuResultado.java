@@ -1,5 +1,6 @@
 package main.resources.menus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.resources.objects.Centro;
@@ -10,10 +11,9 @@ import main.resources.utils.Utils;
 
 public class MenuResultado {
     
-    private static final Scanner ENTRADA = new Scanner(System.in);
-    
     private static Centro escogeCentro(Centro[] centros) {
     
+        Scanner entrada = new Scanner(System.in);
         Centro centroEscogido = null;
         Boolean opcionNoValida = true;
         
@@ -33,7 +33,7 @@ public class MenuResultado {
         
             try {
                 
-                int opcion = ENTRADA.nextInt();
+                int opcion = entrada.nextInt();
                 
                 if (opcion < 1 || opcion > centros.length) {
                 
@@ -46,9 +46,10 @@ public class MenuResultado {
                     
                 }
             
-            } catch (NumberFormatException nfe) {
+            } catch (InputMismatchException ime) {
             
-                System.out.print("Opción incorrecta, vuelva a introducirla: ");
+                System.out.print("Número incorrecto, vuelva a introducirla: ");
+                entrada.next();
             
             }
         
@@ -60,6 +61,7 @@ public class MenuResultado {
     
     private static Partido escogePartido(Partido[] partidos) {
     
+        Scanner entrada = new Scanner(System.in);
         Partido partidoEscogido = null;
         Boolean opcionNoValida = true;
         
@@ -79,7 +81,7 @@ public class MenuResultado {
         
             try {
                 
-                int opcion = ENTRADA.nextInt();
+                int opcion = entrada.nextInt();
                 
                 if (opcion < 1 || opcion > partidos.length) {
                 
@@ -92,9 +94,10 @@ public class MenuResultado {
                     
                 }
             
-            } catch (NumberFormatException nfe) {
+            } catch (InputMismatchException ime) {
             
                 System.out.print("Opción incorrecta, vuelva a introducirla: ");
+                entrada.next();
             
             }
         
@@ -106,6 +109,7 @@ public class MenuResultado {
         
     private static int introduceVotos(Resultado[] resultados, Centro centro) {
     
+        Scanner entrada = new Scanner(System.in);
         int votos = 0;
         Boolean opcionNoValida = true;
         
@@ -117,7 +121,7 @@ public class MenuResultado {
         
             try {
                 
-                int opcion = ENTRADA.nextInt();
+                int opcion = entrada.nextInt();
                 int votosDisponibles = votosDisponibles(resultados, centro);
                 if (opcion < 0 || opcion > votosDisponibles) {
                 
@@ -130,9 +134,10 @@ public class MenuResultado {
                     
                 }
             
-            } catch (NumberFormatException nfe) {
+            } catch (InputMismatchException ime) {
             
                 System.out.print("Número incorrecto, vuelva a introducirlo: ");
+                entrada.next();
             
             }
         
@@ -210,7 +215,6 @@ public class MenuResultado {
         
         }
         
-        ENTRADA.close();
         return newResultados;
     
     }

@@ -1,5 +1,6 @@
 package main.resources.menus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.resources.objects.Partido;
@@ -11,8 +12,6 @@ import main.resources.utils.Utils;
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
 public class MenuPartido {
-    
-    private static final Scanner ENTRADA = new Scanner(System.in);
     
     /**
      * Método que imprime en pantalla las opciones del menu principal de la clase Partidos
@@ -61,12 +60,14 @@ public class MenuPartido {
     */
     private static Partido[] creaPartido(Partido partidos[]) {
     
+        Scanner entrada = new Scanner(System.in);
+        
         System.out.println("------------------------------");
         System.out.print("Introduzca el nombre del partido: ");
-        String nombre = ENTRADA.nextLine();
+        String nombre = entrada.nextLine();
         
         System.out.print("Introduzca las siglas: ");
-        String siglas = ENTRADA.nextLine();
+        String siglas = entrada.nextLine();
         
         Partido partido = new Partido(nombre, siglas);
         
@@ -82,6 +83,7 @@ public class MenuPartido {
     */
     public static Partido[] muestraMenuPartido(Partido partidos[]) {
     
+        Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
         Partido newPartidos[] = partidos;
@@ -90,31 +92,39 @@ public class MenuPartido {
         
         do {
 
-            opcion = ENTRADA.nextInt();
-            switch (opcion) {
+            try {
+                
+                opcion = entrada.nextInt();
+                switch (opcion) {
+
+                    case 1:
+
+                        muestraPartidos(newPartidos);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 2:
+
+                        newPartidos = creaPartido(newPartidos);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 3:
+
+                        noSalir = false;
+                        break;
+
+                    default:
+
+                        System.out.print("Opción no válida, inténtelo de nuevo: ");
+
+                }   
+                
+            } catch (InputMismatchException ime) {
             
-                case 1:
-                    
-                    muestraPartidos(newPartidos);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 2:
-                    
-                    newPartidos = creaPartido(newPartidos);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 3:
-                    
-                    ENTRADA.close();
-                    noSalir = false;
-                    break;
-                    
-                default:
-                    
-                    System.out.print("Opción no válida, inténtelo de nuevo: ");
-            
+                System.out.print("Número no válido, inténtelo de nuevo: ");
+                entrada.next();
+
             }
             
         } while (noSalir);

@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 import main.resources.objects.Centro;
 import main.resources.objects.Partido;
@@ -9,8 +10,6 @@ import main.resources.objects.Resultado;
 import main.resources.menus.MenuCentro;
 import main.resources.menus.MenuPartido;
 import main.resources.menus.MenuResultado;
-
-// Comentario para explicar el git a Alvaro
 
 public class Politics {
     
@@ -40,48 +39,57 @@ public class Politics {
         
         do {
         
-            opcion = entrada.nextInt();
-            switch (opcion) {
-            
-                case 1:
-                    
-                    centros = MenuCentro.muestraMenuCentro(centros);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 2:
-                    
-                    partidos = MenuPartido.muestraMenuPartido(partidos);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 3:
-                    
-                    resultados = MenuResultado.insertaTripleta(centros, partidos, resultados);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 4:
-                    
-                    for (Resultado resultado:resultados) {
+            try {
 
-                        resultado.print();
+                opcion = entrada.nextInt();
+                switch (opcion) {
 
-                    }
-                    muestraMenuPrincipal();
-                    break;
+                    case 1:
+
+                        centros = MenuCentro.muestraMenuCentro(centros);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 2:
+
+                        partidos = MenuPartido.muestraMenuPartido(partidos);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 3:
+
+                        resultados = MenuResultado.insertaTripleta(centros, partidos, resultados);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 4:
+
+                        for (Resultado resultado:resultados) {
+
+                            resultado.print();
+
+                        }
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 5:
+
+                        noSalir = false;
+                        entrada.close();
+                        System.out.println("Fin del programa, hasta la próxima!!!");
+                        break;
+
+                    default:
+
+                        System.out.print("Opción no válida, inténtelo de nuevo: ");
+
+                }
+                
+            } catch (InputMismatchException ime) {
             
-                case 5:
-                    
-                    noSalir = false;
-                    entrada.close();
-                    System.out.println("Fin del programa, hasta la próxima!!!");
-                    break;
-                    
-                default:
-                    
-                    System.out.print("Opción no válida, inténtelo de nuevo: ");
-            
+                System.out.print("Número no válido, inténtelo de nuevo: ");
+                entrada.next();
+
             }
         
         } while (noSalir);

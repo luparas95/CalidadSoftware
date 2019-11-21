@@ -1,5 +1,6 @@
 package main.resources.menus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import main.resources.objects.Centro;
@@ -11,8 +12,6 @@ import main.resources.utils.Utils;
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
 public class MenuCentro {
-    
-    private static final Scanner ENTRADA = new Scanner(System.in);
     
     /**
      * Método que imprime en pantalla las opciones del menu principal de la clase Centros
@@ -61,19 +60,19 @@ public class MenuCentro {
     */
     private static Centro[] creaCentro(Centro centros[]) {
     
+        Scanner entrada = new Scanner(System.in);
         System.out.println("------------------------------");
         System.out.print("Introduzca el nombre del centro: ");
-        String nombre = ENTRADA.nextLine();
+        String nombre = entrada.nextLine();
         
         System.out.print("Introduzca el número de electores: ");
         Boolean nonInt = true;
         int electores = 0;
         do {
         
-            String electoresString = ENTRADA.nextLine();
             try {
                 
-                electores = Integer.parseInt(electoresString);
+                electores = entrada.nextInt();
                 if (electores < 1) {
                 
                     System.out.print("El valor debe ser mayor que 0: ");
@@ -84,9 +83,10 @@ public class MenuCentro {
                 
                 }
             
-            } catch (NumberFormatException nfe) {
+            } catch (InputMismatchException ime) {
             
                 System.out.print("Número incorrecto, vuelva a introducirlo: ");
+                entrada.next();
             
             }
         
@@ -105,6 +105,7 @@ public class MenuCentro {
     */
     public static Centro[] muestraMenuCentro(Centro centros[]) {
     
+        Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
         Centro newCentros[] = centros;
@@ -113,31 +114,39 @@ public class MenuCentro {
         
         do {
 
-            opcion = ENTRADA.nextInt();
-            switch (opcion) {
+            try {
+                
+                opcion = entrada.nextInt();
+                switch (opcion) {
+
+                    case 1:
+
+                        muestraCentros(newCentros);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 2:
+
+                        newCentros = creaCentro(newCentros);
+                        muestraMenuPrincipal();
+                        break;
+
+                    case 3:
+
+                        noSalir = false;
+                        break;
+
+                    default:
+
+                        System.out.print("Opción no válida, inténtelo de nuevo: ");
+
+                }
+                
+            } catch (InputMismatchException ime) {
             
-                case 1:
-                    
-                    muestraCentros(newCentros);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 2:
-                    
-                    newCentros = creaCentro(newCentros);
-                    muestraMenuPrincipal();
-                    break;
-            
-                case 3:
-                    
-                    ENTRADA.close();
-                    noSalir = false;
-                    break;
-                    
-                default:
-                    
-                    System.out.print("Opción no válida, inténtelo de nuevo: ");
-            
+                System.out.print("Número no válido, inténtelo de nuevo: ");
+                entrada.next();
+
             }
             
         } while (noSalir);
