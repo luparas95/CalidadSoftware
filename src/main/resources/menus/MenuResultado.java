@@ -9,6 +9,10 @@ import main.resources.objects.Resultado;
 
 import main.resources.utils.Utils;
 
+/**
+ * Esta clase contiene el menu de la clase Resultado y la implementacion de sus metodos
+ * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+ */
 public class MenuResultado {
     
     private static Centro escogeCentro(Centro[] centros) {
