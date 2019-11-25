@@ -101,7 +101,7 @@ public class MenuCentro {
     * Método que implementa las opciones del menu principal
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
-    * @return Centro[] arreglo usado para almacenar todos los objetos Centro 
+    * @return newCentros  arreglo usado para almacenar todos los objetos Centro 
     */
     public static Centro[] muestraMenuCentro(Centro centros[]) {
     
