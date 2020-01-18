@@ -1,16 +1,14 @@
-package main;
-
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.List;
 
-import main.resources.objects.Centro;
-import main.resources.objects.Partido;
-import main.resources.objects.Resultado;
+import main.views.MenuCentro;
+import main.views.MenuPartido;
+import main.views.MenuResultado;
 
-import main.resources.menus.MenuCentro;
-import main.resources.menus.MenuPartido;
-import main.resources.menus.MenuResultado;
+import main.models.dao.ResultadoDao;
+
+import main.models.vo.ResultadoToPrintVo;
 
 public class Politics {
     
@@ -32,9 +30,6 @@ public class Politics {
         Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
-        Centro[] centros = {};
-        Partido[] partidos = {};
-        Resultado[] resultados = {};
 
         muestraMenuPrincipal();
         
@@ -47,28 +42,28 @@ public class Politics {
 
                     case 1:
 
-                        centros = MenuCentro.muestraMenuCentro(centros);
+                        MenuCentro.muestraMenuCentro();
                         muestraMenuPrincipal();
                         break;
 
                     case 2:
 
-                        partidos = MenuPartido.muestraMenuPartido(partidos);
+                        MenuPartido.muestraMenuPartido();
                         muestraMenuPrincipal();
                         break;
 
                     case 3:
 
-                        resultados = MenuResultado.insertaTripleta(centros, partidos, resultados);
+                        MenuResultado.insertaTripleta();
                         muestraMenuPrincipal();
                         break;
 
                     case 4:
+                        
+                        List resultados = ResultadoDao.getResultadosToPrint();
+                        for (Object resultado:resultados) {
 
-                        Arrays.sort(resultados);
-                        for (Resultado resultado:resultados) {
-
-                            resultado.print();
+                            ((ResultadoToPrintVo) resultado).print();
 
                         }
                         muestraMenuPrincipal();

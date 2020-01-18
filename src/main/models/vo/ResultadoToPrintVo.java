@@ -1,25 +1,25 @@
-package main.resources.objects;
+package main.models.vo;
 
 /**
- * Esta clase define objetos "Resultado" los cuales se componen de tuplas formadas por un objeto Centro, un objeto Partido y 
- * la cantidad de votos que el partido ha obtenido en dicho centro
+ * Esta clase define objetos "Resultado" los cuales se componen de tuplas formadas por un centro (String), un partido (String) y 
+ * la cantidad de votos (int) que el partido ha obtenido en dicho centro
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class Resultado implements Comparable<Resultado> {
+public class ResultadoToPrintVo {
 
     //Campos de la clase
-    private Centro centro;
-    private Partido partido;
+    private String centro;
+    private String partido;
     private int votos;
     
     /**
     * Constructor para un objeto Resultado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param centro define el centro 
-    * @param partido define el partido
+    * @param centro define el id del centro 
+    * @param partido define el id del partido
     * @param votos define la cantidad de votos que el partido ha obtenido en el centro en cuestión
     */
-    public Resultado(Centro centro, Partido partido, int votos) {
+    public ResultadoToPrintVo(String centro, String partido, int votos) {
     
         this.centro = centro;
         this.partido = partido;
@@ -30,9 +30,9 @@ public class Resultado implements Comparable<Resultado> {
     /**
     * Método que devuelve el objeto Centro de la tupla Resultado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @return this.centro es el objeto Centro de la tupla Resultado
+    * @return this.centro es el Centro de la tupla Resultado
     */
-    public Centro getCentro() {
+    public String getCentro() {
     
         return this.centro;
 
@@ -41,9 +41,9 @@ public class Resultado implements Comparable<Resultado> {
     /**
     * Método que devuelve el objeto Partido de la tupla Resultado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @return this.partido es el objeto Partido de la tupla Resultado
+    * @return this.partido es el Partido de la tupla Resultado
     */
-    public Partido getPartido() {
+    public String getPartido() {
     
         return this.partido;
 
@@ -65,7 +65,7 @@ public class Resultado implements Comparable<Resultado> {
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param centro parametro que define el nuevo centro del Resultado
     */
-    public void setCentro(Centro centro) {
+    public void setCentro(String centro) {
     
         this.centro = centro;
 
@@ -76,7 +76,7 @@ public class Resultado implements Comparable<Resultado> {
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param partido parametro que define el nuevo partido del Resultado
     */
-    public void setPartido(Partido partido) {
+    public void setPartido(String partido) {
     
         this.partido = partido;
 
@@ -92,6 +92,7 @@ public class Resultado implements Comparable<Resultado> {
         this.votos = votos;
 
     }
+    
     /**
      * Método que imprime por pantalla los atributos de un objeto Resultado
      * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
@@ -99,17 +100,10 @@ public class Resultado implements Comparable<Resultado> {
     public void print() {
     
         System.out.println("------------------------------");
-        System.out.println("Centro: " + this.centro.getNombre());
-        System.out.println("Partido: " + this.partido.getNombre());
+        System.out.println("Centro: " + this.centro);
+        System.out.println("Partido: " + this.partido);
         System.out.println("Votos: " + this.votos);
     
-    }
-    
-    @Override
-    public int compareTo(Resultado r) {
-
-        return getCentro().getNombre().compareTo(r.getCentro().getNombre());
-
     }
     
 }

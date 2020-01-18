@@ -1,26 +1,40 @@
-package main.resources.objects;
+package main.models.vo;
 
 /**
- * Esta clase define objetos "Partido" cuyos atributos son el nombre (string) y las siglas (string) del mismo
+ * Esta clase define objetos "Partido" cuyos atributos son el id (int), el nombre (string) y las siglas (string) del mismo
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class Partido {
+public class PartidoVo {
 
     //Campos de la clase
+    private int id;
     private String nombre;
     private String siglas;
     
     /**
     * Constructor para un objeto Partido
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param nombre define el nombre del 
+    * @param id define el id del partido
+    * @param nombre define el nombre del partido
     * @param siglas define las siglas del partido
     */
-    public Partido(String nombre, String siglas) {
+    public PartidoVo(int id, String nombre, String siglas) {
     
+        this.id = id;
         this.nombre = nombre;
         this.siglas = siglas;
     
+    }
+    
+    /**
+    * Método que devuelve el id del partido
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @return id es el id del partido
+    */
+    public int getId() {
+    
+        return this.id;
+
     }
     
     /**
@@ -42,6 +56,17 @@ public class Partido {
     public String getSiglas() {
     
         return this.siglas;
+
+    }
+    
+    /**
+    * Método que establece un nuevo id para el partido
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param id parametro que define el nuevo id del partido
+    */
+    public void setId(int id) {
+    
+        this.id = id;
 
     }
     

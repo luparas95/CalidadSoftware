@@ -1,13 +1,17 @@
-package main.resources.menus;
+package main.views;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
-import main.resources.objects.Centro;
-import main.resources.objects.Partido;
-import main.resources.objects.Resultado;
+import main.models.dao.CentroDao;
+import main.models.dao.PartidoDao;
+import main.models.dao.ResultadoDao;
 
-import main.resources.utils.Utils;
+import main.models.vo.CentroVo;
+import main.models.vo.PartidoVo;
+import main.models.vo.ResultadoVo;
+
 
 /**
  * Esta clase contiene el menu de la clase Resultado y la implementacion de sus metodos
@@ -18,22 +22,22 @@ public class MenuResultado {
     /**
      * Metodo que imprime por pantalla todos los centros almacenados con un número asociado y devuelve el centro elegido
      * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-     * @param centros[] este parametro es el arreglo usado para almacenar todos los centros del sistema
+     * @param centros este parametro es el arreglo usado para almacenar todos los centros del sistema
      * @return Centro es el centro elegido por el usuario de entre todos los almacenados
      */
-    private static Centro escogeCentro(Centro[] centros) {
+    private static CentroVo escogeCentro(List centros) {
     
         Scanner entrada = new Scanner(System.in);
-        Centro centroEscogido = null;
+        CentroVo centroEscogido = null;
         Boolean opcionNoValida = true;
         
         System.out.println("------------------------------");
 
         int i = 0;
-        for (Centro centro:centros) {
+        for (Object centro:centros) {
 
             i++;
-            System.out.println("" + i + ". " + centro.getNombre());
+            System.out.println("" + i + ". " + ((CentroVo) centro).getNombre());
 
         }
 
@@ -45,13 +49,13 @@ public class MenuResultado {
                 
                 int opcion = entrada.nextInt();
                 
-                if (opcion < 1 || opcion > centros.length) {
+                if (opcion < 1 || opcion > centros.size()) {
                 
                     System.out.print("Opción incorrecta, vuelva a introducirla: ");
                 
                 } else {
                     
-                    centroEscogido = centros[opcion - 1];
+                    centroEscogido = (CentroVo) centros.get(opcion - 1);
                     opcionNoValida = false;
                     
                 }
@@ -75,19 +79,19 @@ public class MenuResultado {
      * @param partidos[] este parametro es el arreglo usado para almacenar todos los partidos del sistema
      * @return Partido es el partido elegido por el usuario de entre todos los almacenados
      */
-    private static Partido escogePartido(Partido[] partidos) {
+    private static PartidoVo escogePartido(List partidos) {
     
         Scanner entrada = new Scanner(System.in);
-        Partido partidoEscogido = null;
+        PartidoVo partidoEscogido = null;
         Boolean opcionNoValida = true;
         
         System.out.println("------------------------------");
 
         int i = 0;
-        for (Partido partido:partidos) {
+        for (Object partido:partidos) {
 
             i++;
-            System.out.println("" + i + ". " + partido.getNombre());
+            System.out.println("" + i + ". " + ((PartidoVo) partido).getNombre());
 
         }
 
@@ -99,13 +103,13 @@ public class MenuResultado {
                 
                 int opcion = entrada.nextInt();
                 
-                if (opcion < 1 || opcion > partidos.length) {
+                if (opcion < 1 || opcion > partidos.size()) {
                 
                     System.out.print("Opción incorrecta, vuelva a introducirla: ");
                 
                 } else {
                     
-                    partidoEscogido = partidos[opcion - 1];
+                    partidoEscogido = (PartidoVo) partidos.get(opcion - 1);
                     opcionNoValida = false;
                     
                 }
@@ -130,7 +134,7 @@ public class MenuResultado {
      * @param centro este parametro es el centro escogido por el usuario
      * @return int es el número de votos de la nueva tripleta
      */    
-    private static int introduceVotos(Resultado[] resultados, Centro centro) {
+    private static int introduceVotos(List resultados, CentroVo centro) {
     
         Scanner entrada = new Scanner(System.in);
         int votos = 0;
@@ -178,11 +182,11 @@ public class MenuResultado {
      * @param partido escogido por el usuario
      * @return verdadero o falso dependiendo de si ya existe una trupleta con el centro y partido seleccionados
      */  
-    private static Boolean existeResultado(Resultado[] resultados, Centro centro, Partido partido) {
+    private static Boolean existeResultado(List resultados, CentroVo centro, PartidoVo partido) {
     
-        for (Resultado resultado:resultados) {
+        for (Object resultado:resultados) {
 
-            if (resultado.getCentro() == centro && resultado.getPartido() == partido) {
+            if (((ResultadoVo) resultado).getIdCentro() == centro.getId() && ((ResultadoVo) resultado).getIdPartido() == partido.getId()) {
             
                 return true;
             
@@ -201,14 +205,14 @@ public class MenuResultado {
      * @param centro centro escogido por el usuario
      * @return int es el número de votos disponibles del centro
      */  
-    private static int votosDisponibles(Resultado[] resultados, Centro centro) {
+    private static int votosDisponibles(List resultados, CentroVo centro) {
     
         int votosDisponibles = centro.getElectores();
-        for (Resultado resultado:resultados) {
+        for (Object resultado:resultados) {
 
-            if (resultado.getCentro() == centro) {
+            if (((ResultadoVo) resultado).getIdCentro() == centro.getId()) {
             
-                votosDisponibles -= resultado.getVotos();
+                votosDisponibles -= ((ResultadoVo) resultado).getVotos();
             
             }
 
@@ -221,24 +225,23 @@ public class MenuResultado {
     /**
      * Metodo que introduce la nueva tripleta en el arreglo donde se almacenan
      * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-     * @param centros[] este parametro es el arreglo usado para almacenar todos los centos del sistema
-     * @param partidos[] este parametro es el arreglo usado para almacenar todos los partidos del sistema
-     * @param resultados[] este parametro es el arreglo usado para almacenar todos los resultados del sistema
-     * @return Resultado[] arreglo usado para almacenar todos los resultados del sistema
      */   
-    public static Resultado[] insertaTripleta(Centro[] centros, Partido[] partidos, Resultado[] resultados) {
+    public static void insertaTripleta() {
     
-        Resultado newResultados[] = resultados;
-        Centro centro;
-        Partido partido;
+        List centros = CentroDao.getCentros();
+        List partidos = PartidoDao.getPartidos();
+        List resultados = ResultadoDao.getResultados();
+        
+        CentroVo centro;
+        PartidoVo partido;
         int votos;
         
-        if (centros.length == 0) {
+        if (centros.isEmpty()) {
         
             System.out.println("------------------------------");
             System.out.println("Inscriba primero los centros para poder introducir resultados");
         
-        } else if (partidos.length == 0) {
+        } else if (partidos.isEmpty()) {
         
             System.out.println("------------------------------");
             System.out.println("Inscriba primero los partidos para poder introducir resultados");
@@ -254,14 +257,12 @@ public class MenuResultado {
             } else {
             
                 votos = introduceVotos(resultados, centro);
-                Resultado resultado = new Resultado(centro, partido, votos);
-                newResultados = Utils.ResultadoArrayPush(resultado, resultados);
+                ResultadoVo resultado = new ResultadoVo(centro.getId(), partido.getId(), votos);
+                ResultadoDao.createResultado(resultado);
             
             }
         
         }
-        
-        return newResultados;
     
     }
 

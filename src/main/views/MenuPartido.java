@@ -1,11 +1,11 @@
-package main.resources.menus;
+package main.views;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
-import main.resources.objects.Partido;
-
-import main.resources.utils.Utils;
+import main.models.vo.PartidoVo;
+import main.models.dao.PartidoDao;
 
 /**
  * Esta clase contiene el menu de la clase Partido y la implementacion de sus metodos
@@ -30,21 +30,20 @@ public class MenuPartido {
     /**
     * Método que imprime por pantalla los atributos de todos los objetos Partido guardados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param partidos[] este parametro es un arreglo usado para almacenar todos los objetos Partido
     */
-    private static void muestraPartidos(Partido partidos[]) {
+    private static void muestraPartidos() {
     
-        System.out.println("------------------------------");
+        List partidos = PartidoDao.getPartidos();
         
-        if (partidos.length == 0) {
+        if (partidos.isEmpty()) {
         
             System.out.println("Aún no hay partidos");
         
         } else {
         
-            for (Partido partido:partidos) {
+            for (Object partido:partidos) {
 
-                partido.print();
+                ((PartidoVo) partido).print();
 
             }
             
@@ -55,10 +54,8 @@ public class MenuPartido {
     /**
     * Método que crea un nuevo objeto Partido y lo agrega al arreglo donde son almacenados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param partidos[] este parametro es un arreglo usado para almacenar todos los objetos Partido
-    * @return Partido[] arreglo usado para almacenar todos los objetos Partido
     */
-    private static Partido[] creaPartido(Partido partidos[]) {
+    private static void creaPartido() {
     
         Scanner entrada = new Scanner(System.in);
         
@@ -69,24 +66,20 @@ public class MenuPartido {
         System.out.print("Introduzca las siglas: ");
         String siglas = entrada.nextLine();
         
-        Partido partido = new Partido(nombre, siglas);
-        
-        return Utils.PartidoArrayPush(partido, partidos);
+        PartidoVo partido = new PartidoVo(0, nombre, siglas);
+        PartidoDao.createCentro(partido);
     
     }
     
     /**
     * Método que implementa las opciones del menu principal
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param partidos[] este parametro es un arreglo usado para almacenar todos los objetos Partido
-    * @return Partido[] arreglo usado para almacenar todos los objetos Partido 
     */
-    public static Partido[] muestraMenuPartido(Partido partidos[]) {
+    public static void muestraMenuPartido() {
     
         Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
-        Partido newPartidos[] = partidos;
         
         muestraMenuPrincipal();
         
@@ -99,13 +92,13 @@ public class MenuPartido {
 
                     case 1:
 
-                        muestraPartidos(newPartidos);
+                        muestraPartidos();
                         muestraMenuPrincipal();
                         break;
 
                     case 2:
 
-                        newPartidos = creaPartido(newPartidos);
+                        creaPartido();
                         muestraMenuPrincipal();
                         break;
 
@@ -128,8 +121,6 @@ public class MenuPartido {
             }
             
         } while (noSalir);
-        
-        return newPartidos;
             
     }
 

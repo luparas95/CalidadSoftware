@@ -1,11 +1,11 @@
-package main.resources.menus;
+package main.views;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
-import main.resources.objects.Centro;
-
-import main.resources.utils.Utils;
+import main.models.vo.CentroVo;
+import main.models.dao.CentroDao;
 
 /**
  * Esta clase contiene el menu de la clase Centro y la implementacion de sus metodos
@@ -30,21 +30,20 @@ public class MenuCentro {
     /**
     * Método que imprime por pantalla los atributos de todos los objetos Centro guardados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
     */
-    private static void muestraCentros(Centro centros[]) {
+    private static void muestraCentros() {
 
-        System.out.println("------------------------------");
-        
-        if (centros.length == 0) {
+        List centros = CentroDao.getCentros();
+            
+        if (centros.isEmpty()) {
         
             System.out.println("Aún no hay centros");
         
         } else {
-        
-            for (Centro centro:centros) {
+            
+            for (Object centro:centros) {
 
-                centro.print();
+                ((CentroVo) centro).print();
 
             }
             
@@ -55,10 +54,8 @@ public class MenuCentro {
     /**
     * Método que crea un nuevo objeto Centro y lo agrega al arreglo donde son almacenados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
-    * @return Centro[] arreglo usado para almacenar todos los objetos Centro
     */
-    private static Centro[] creaCentro(Centro centros[]) {
+    private static void creaCentro() {
     
         Scanner entrada = new Scanner(System.in);
         System.out.println("------------------------------");
@@ -92,23 +89,20 @@ public class MenuCentro {
         
         } while (nonInt);
         
-        Centro centro = new Centro(nombre, electores);
-        return Utils.CentroArrayPush(centro, centros);
+        CentroVo centro = new CentroVo(0, nombre, electores);
+        CentroDao.createCentro(centro);
     
     }
 
     /**
     * Método que implementa las opciones del menu principal
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param centros[] este parametro es un arreglo usado para almacenar todos los objetos Centro
-    * @return newCentros  arreglo usado para almacenar todos los objetos Centro 
     */
-    public static Centro[] muestraMenuCentro(Centro centros[]) {
+    public static void muestraMenuCentro() {
     
         Scanner entrada = new Scanner(System.in);
         Boolean noSalir = true;
         int opcion;
-        Centro newCentros[] = centros;
         
         muestraMenuPrincipal();
         
@@ -121,13 +115,13 @@ public class MenuCentro {
 
                     case 1:
 
-                        muestraCentros(newCentros);
+                        muestraCentros();
                         muestraMenuPrincipal();
                         break;
 
                     case 2:
 
-                        newCentros = creaCentro(newCentros);
+                        creaCentro();
                         muestraMenuPrincipal();
                         break;
 
@@ -150,8 +144,6 @@ public class MenuCentro {
             }
             
         } while (noSalir);
-        
-        return newCentros;
             
     }
 
