@@ -2,9 +2,9 @@ package main.views;
 
 import java.awt.event.*;
 import javax.swing.*;
-import main.views.CentroView;
+import main.views.MenuCentroView;
 
-public class PrincipalView {
+public class MenuPrincipalView {
     
     public static void mostrar() {
         
@@ -26,7 +26,7 @@ public class PrincipalView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                CentroView.mostrar();
+                MenuCentroView.mostrar();
 
             }
 

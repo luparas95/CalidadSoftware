@@ -3,7 +3,7 @@ package main.views;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class CentroView {
+public class MenuCentroView {
     
     public static void mostrar() {
         
@@ -43,7 +43,7 @@ public class CentroView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                PrincipalView.mostrar();
+                MenuPrincipalView.mostrar();
 
             }
 

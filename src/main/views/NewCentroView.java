@@ -53,7 +53,7 @@ public class NewCentroView {
                 
                     CentroController.creaCentro(nombreField.getText(), Integer.parseInt(electoresField.getText()));
                     f.setVisible(false);
-                    CentroView.mostrar();
+                    MenuCentroView.mostrar();
                 
                 }
 
@@ -66,7 +66,7 @@ public class NewCentroView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                CentroView.mostrar();
+                MenuCentroView.mostrar();
 
             }
 

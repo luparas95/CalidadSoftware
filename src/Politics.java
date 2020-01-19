@@ -1,10 +1,10 @@
-import main.views.PrincipalView;
+import main.views.MenuPrincipalView;
 
 public class Politics {
     
     public static void main(String[] args) {
         
-        PrincipalView.mostrar();
+        MenuPrincipalView.mostrar();
         
         while (true);
         

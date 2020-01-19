@@ -24,7 +24,7 @@ public class CentroListView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                CentroView.mostrar();
+                MenuCentroView.mostrar();
 
             }
 
