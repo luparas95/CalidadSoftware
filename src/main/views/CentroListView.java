@@ -14,6 +14,8 @@ public class CentroListView {
     
     public static void mostrar() {
         
+        LoadingView.mostrar();
+        
         JFrame f = new JFrame("Listado Centros");
         JButton bVolver = new JButton("Volver");
         
@@ -53,6 +55,8 @@ public class CentroListView {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setLayout(null);
         f.setVisible(true);
+
+        LoadingView.ocultar();
   
     }
 
