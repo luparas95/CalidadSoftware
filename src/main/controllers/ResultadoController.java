@@ -1,4 +1,4 @@
-package main.views;
+package main.controllers;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -17,7 +17,7 @@ import main.models.vo.ResultadoVo;
  * Esta clase contiene el menu de la clase Resultado y la implementacion de sus metodos
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class MenuResultado {
+public class ResultadoController {
     
     /**
      * Metodo que imprime por pantalla todos los centros almacenados con un número asociado y devuelve el centro elegido

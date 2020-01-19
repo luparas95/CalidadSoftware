@@ -1,4 +1,4 @@
-package main.views;
+package main.controllers;
 
 import java.util.InputMismatchException;
 import java.util.List;
@@ -11,7 +11,7 @@ import main.models.dao.PartidoDao;
  * Esta clase contiene el menu de la clase Partido y la implementacion de sus metodos
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class MenuPartido {
+public class PartidoController {
     
     /**
      * Método que imprime en pantalla las opciones del menu principal de la clase Partidos
