@@ -92,17 +92,4 @@ public class CentroVo {
 
     }
     
-    /**
-     * Método que imprime por pantalla los atributos de un objeto Centro
-     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-     */
-    public void print() {
-    
-        System.out.println("------------------------------");
-        System.out.println("Id: " + this.id);
-        System.out.println("Centro: " + this.nombre);
-        System.out.println("Electores: " + this.electores);
-    
-    }
-    
 }
