@@ -20,7 +20,7 @@ public class PartidoDao {
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param partido Es el objeto partido a insertar en la BBDD
     */
-    public static void createCentro(PartidoVo partido) {
+    public static void createPartido(PartidoVo partido) {
     
         ConnectionManager connectionManager = new ConnectionManager();
         try {

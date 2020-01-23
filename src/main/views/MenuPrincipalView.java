@@ -37,7 +37,7 @@ public class MenuPrincipalView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                //TODO: Mostrar menú de partidos
+                MenuPartidoView.mostrar();
 
             }
 
