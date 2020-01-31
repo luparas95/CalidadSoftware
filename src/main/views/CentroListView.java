@@ -34,8 +34,9 @@ public class CentroListView {
         
         f.add(bVolver);
         
-        Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Electores" }));
-        JTable table = new JTable(CentroController.getCentros(), cabeceras) {
+        final Vector<Vector> tableData = CentroController.getCentros();
+        final Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Electores" }));
+        JTable table = new JTable(tableData, cabeceras) {
         
             private static final long serialVersionUID = 1L;
 
@@ -45,6 +46,24 @@ public class CentroListView {
             };
         
         };
+        
+        table.addMouseListener(new MouseAdapter() {
+        
+            public void mouseClicked(MouseEvent e) {
+            
+                if (e.getClickCount() == 2) {
+                
+                    JTable target = (JTable) e.getSource();
+                    int row = target.getSelectedRow();
+                    f.setVisible(false);
+                    LoadingView.mostrar();
+                    UpdateCentroView.mostrar(Integer.parseInt((String) tableData.get(row).get(0)));
+                
+                }
+            
+            }
+        
+        });
         
         JScrollPane tablePanel = new JScrollPane(table);
         tablePanel.setPreferredSize(new Dimension(400, 300));

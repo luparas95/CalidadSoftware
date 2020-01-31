@@ -36,6 +36,17 @@ public class CentroController {
     }
     
     /**
+    * Método que imprime por pantalla los atributos de el objeto Centro guardado
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param idCentro El id del centro a extraer
+    */
+    public static CentroVo getCentroById(int idCentro) {
+        
+        return CentroDao.getCentroById(idCentro);
+    
+    }
+    
+    /**
     * Método que crea un nuevo objeto Centro y lo agrega al arreglo donde son almacenados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param nombre El nombre del centro a crear
@@ -45,6 +56,17 @@ public class CentroController {
     
         CentroVo centro = new CentroVo(0, nombre, electores);
         CentroDao.createCentro(centro);
+    
+    }
+
+    /**
+    * Método que crea un actualiza un objeto Centro
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param centro El objeto centro a actualizar
+    */
+    public static void updateCentro(CentroVo centro) {
+    
+        CentroDao.updateCentro(centro);
     
     }
 
