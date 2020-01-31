@@ -83,8 +83,6 @@ public class CentroDao {
         CentroVo centro = new CentroVo(0, "", 0);
         try {
 
-            //Statement stmt = connectionManager.getConnection().createStatement();
-            //ResultSet rs = stmt.executeQuery("select * from centro where id = ?");
             PreparedStatement stmt = connectionManager.getConnection().prepareStatement("select * from centro where id = ?");   
             stmt.setInt(1, idCentro);
             ResultSet rs = stmt.executeQuery();

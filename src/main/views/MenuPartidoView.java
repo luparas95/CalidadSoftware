@@ -3,6 +3,9 @@ package main.views;
 import java.awt.event.*;
 import javax.swing.*;
 
+import main.constants.Constant;
+import main.models.vo.SessionVo;
+
 public class MenuPartidoView {
     
     public static void mostrar() {
@@ -11,6 +14,12 @@ public class MenuPartidoView {
         JButton bVerPartidos = new JButton("Ver Partidos");
         JButton bCrearPartidos = new JButton("Crear Partido");
         JButton bVolver = new JButton("Volver");
+        
+        if (SessionVo.getInstance().getUser().getRole() != Constant.ROLE_ADMINISTRADOR && SessionVo.getInstance().getUser().getRole() != Constant.ROLE_DELEGADO_ELECTORAL) {
+        
+            bCrearPartidos.setEnabled(false);
+        
+        }
         
         bVerPartidos.setBounds(50, 75, 275, 30);
         bCrearPartidos.setBounds(50, 150, 275, 30);

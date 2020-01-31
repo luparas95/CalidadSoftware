@@ -2,7 +2,9 @@ package main.views;
 
 import java.awt.event.*;
 import javax.swing.*;
-import main.views.MenuCentroView;
+
+import main.constants.Constant;
+import main.models.vo.SessionVo;
 
 public class MenuPrincipalView {
     
@@ -14,6 +16,12 @@ public class MenuPrincipalView {
         JButton bResultados = new JButton("Introducir Resultados");
         JButton bTotalizacion = new JButton("Totalización");
         JButton bSalir = new JButton("Salir");
+        
+        if (SessionVo.getInstance().getUser().getRole() != Constant.ROLE_ADMINISTRADOR && SessionVo.getInstance().getUser().getRole() != Constant.ROLE_PRESIDENTE_MESA_ELECTORAL) {
+        
+            bResultados.setEnabled(false);
+        
+        }
         
         bCentros.setBounds(50, 50, 275, 30);
         bPartidos.setBounds(50, 100, 275, 30);

@@ -8,7 +8,9 @@ import java.util.Vector;
 
 import javax.swing.*;
 
+import main.constants.Constant;
 import main.controllers.CentroController;
+import main.models.vo.SessionVo;
 
 public class CentroListView {
     
@@ -51,7 +53,7 @@ public class CentroListView {
         
             public void mouseClicked(MouseEvent e) {
             
-                if (e.getClickCount() == 2) {
+                if (e.getClickCount() == 2 && (SessionVo.getInstance().getUser().getRole() == Constant.ROLE_ADMINISTRADOR || SessionVo.getInstance().getUser().getRole() == Constant.ROLE_SECRETARIO_ELECTORAL)) {
                 
                     JTable target = (JTable) e.getSource();
                     int row = target.getSelectedRow();

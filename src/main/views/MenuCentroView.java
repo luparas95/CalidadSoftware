@@ -3,6 +3,9 @@ package main.views;
 import java.awt.event.*;
 import javax.swing.*;
 
+import main.constants.Constant;
+import main.models.vo.SessionVo;
+
 public class MenuCentroView {
     
     public static void mostrar() {
@@ -11,6 +14,12 @@ public class MenuCentroView {
         JButton bVerCentros = new JButton("Ver Centros");
         JButton bCrearCentros = new JButton("Crear Centro");
         JButton bVolver = new JButton("Volver");
+        
+        if (SessionVo.getInstance().getUser().getRole() != Constant.ROLE_ADMINISTRADOR && SessionVo.getInstance().getUser().getRole() != Constant.ROLE_SECRETARIO_ELECTORAL) {
+        
+            bCrearCentros.setEnabled(false);
+        
+        }
         
         bVerCentros.setBounds(50, 75, 275, 30);
         bCrearCentros.setBounds(50, 150, 275, 30);
