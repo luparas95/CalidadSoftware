@@ -36,6 +36,17 @@ public class PartidoController {
     }
     
     /**
+    * Método que imprime por pantalla los atributos de el objeto Partido guardado
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param idPartido El id del partido a extraer
+    */
+    public static PartidoVo getPartidoById(int idPartido) {
+        
+        return PartidoDao.getPartidoById(idPartido);
+    
+    }
+    
+    /**
     * Método que crea un nuevo objeto Partido y lo agrega al arreglo donde son almacenados
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param nombre El nombre del partido a crear
@@ -45,6 +56,17 @@ public class PartidoController {
     
         PartidoVo partido = new PartidoVo(0, nombre, siglas);
         PartidoDao.createPartido(partido);
+    
+    }
+    
+    /**
+    * Método que crea un actualiza un objeto Partido
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    * @param partido El objeto partido a actualizar
+    */
+    public static void updatePartido(PartidoVo partido) {
+    
+        PartidoDao.updatePartido(partido);
     
     }
 

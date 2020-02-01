@@ -7,8 +7,10 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import javax.swing.*;
+import main.constants.Constant;
 
 import main.controllers.PartidoController;
+import main.models.vo.SessionVo;
 
 public class PartidoListView {
     
@@ -34,8 +36,9 @@ public class PartidoListView {
         
         f.add(bVolver);
         
-        Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Siglas" }));
-        JTable table = new JTable(PartidoController.getPartidos(), cabeceras) {
+        final Vector<Vector> tableData = PartidoController.getPartidos();
+        final Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Siglas" }));
+        JTable table = new JTable(tableData, cabeceras) {
         
             private static final long serialVersionUID = 1L;
 
@@ -45,6 +48,24 @@ public class PartidoListView {
             };
         
         };
+        
+        table.addMouseListener(new MouseAdapter() {
+        
+            public void mouseClicked(MouseEvent e) {
+            
+                if (e.getClickCount() == 2 && (SessionVo.getInstance().getUser().getRole() == Constant.ROLE_ADMINISTRADOR || SessionVo.getInstance().getUser().getRole() == Constant.ROLE_SECRETARIO_ELECTORAL)) {
+                
+                    JTable target = (JTable) e.getSource();
+                    int row = target.getSelectedRow();
+                    f.setVisible(false);
+                    LoadingView.mostrar();
+                    UpdatePartidoView.mostrar(Integer.parseInt((String) tableData.get(row).get(0)));
+                
+                }
+            
+            }
+        
+        });
         
         JScrollPane tablePanel = new JScrollPane(table);
         tablePanel.setPreferredSize(new Dimension(400, 300));
