@@ -10,11 +10,11 @@ public class MenuPrincipalView {
     
     public static void mostrar() {
         
-        JFrame f = new JFrame("Menú Principal");
-        JButton bCentros = new JButton("Menú Centros");
-        JButton bPartidos = new JButton("Menú Partidos");
+        JFrame f = new JFrame("MENU PRINCIPAL");
+        JButton bCentros = new JButton("Centros");
+        JButton bPartidos = new JButton("Partidos");
         JButton bResultados = new JButton("Introducir Resultados");
-        JButton bTotalizacion = new JButton("Totalización");
+        JButton bTotalizacion = new JButton("Totalizar");
         JButton bSalir = new JButton("Salir");
         
         if (SessionVo.getInstance().getUser().getRole() != Constant.ROLE_ADMINISTRADOR && SessionVo.getInstance().getUser().getRole() != Constant.ROLE_PRESIDENTE_MESA_ELECTORAL) {

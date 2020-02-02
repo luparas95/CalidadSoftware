@@ -10,7 +10,7 @@ public class MenuCentroView {
     
     public static void mostrar() {
         
-        JFrame f = new JFrame("Menú Centro");
+        JFrame f = new JFrame("MENU CENTRO");
         JButton bVerCentros = new JButton("Ver Centros");
         JButton bCrearCentros = new JButton("Crear Centro");
         JButton bVolver = new JButton("Volver");

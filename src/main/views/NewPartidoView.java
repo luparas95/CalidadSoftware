@@ -43,11 +43,11 @@ public class NewPartidoView {
                 
                 if (!Validations.cadenaValida(nombreField.getText())) {
                 
-                    JOptionPane.showMessageDialog(f, "Introduzca un nombre válido");
+                    JOptionPane.showMessageDialog(f, "Introduzca un nombre");
                 
                 } else if (!Validations.cadenaValida(siglasField.getText())) {
                 
-                    JOptionPane.showMessageDialog(f, "Introduzca unas siglas válidas");
+                    JOptionPane.showMessageDialog(f, "Introduzca unas siglas");
                 
                 } else {
                 

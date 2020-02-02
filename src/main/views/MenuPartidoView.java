@@ -10,7 +10,7 @@ public class MenuPartidoView {
     
     public static void mostrar() {
         
-        JFrame f = new JFrame("Menú Partido");
+        JFrame f = new JFrame("MENU PARTIDO");
         JButton bVerPartidos = new JButton("Ver Partidos");
         JButton bCrearPartidos = new JButton("Crear Partido");
         JButton bVolver = new JButton("Volver");

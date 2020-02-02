@@ -43,11 +43,11 @@ public class NewCentroView {
                 
                 if (!Validations.cadenaValida(nombreField.getText())) {
                 
-                    JOptionPane.showMessageDialog(f, "Introduzca un nombre válido");
+                    JOptionPane.showMessageDialog(f, "Introduzca un nombre");
                 
                 } else if (!Validations.numeroValido(electoresField.getText())) {
                 
-                    JOptionPane.showMessageDialog(f, "Introduzca un número de electores válido");
+                    JOptionPane.showMessageDialog(f, "Introduzca una cifra de electores");
                 
                 } else {
                 
