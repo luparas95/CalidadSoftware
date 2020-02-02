@@ -53,7 +53,7 @@ public class PartidoListView {
         
             public void mouseClicked(MouseEvent e) {
             
-                if (e.getClickCount() == 2 && (SessionVo.getInstance().getUser().getRole() == Constant.ROLE_ADMINISTRADOR || SessionVo.getInstance().getUser().getRole() == Constant.ROLE_SECRETARIO_ELECTORAL)) {
+                if (e.getClickCount() == 2 && (SessionVo.getInstance().getUser().getRole() == Constant.ROLE_ADMINISTRADOR || SessionVo.getInstance().getUser().getRole() == Constant.ROLE_DELEGADO_ELECTORAL)) {
                 
                     JTable target = (JTable) e.getSource();
                     int row = target.getSelectedRow();

@@ -112,7 +112,7 @@ public class PartidoDao {
         try {
 
             Statement stmt = connectionManager.getConnection().createStatement();
-            stmt.executeUpdate("UPDATE partido set nombre = '" + partido.getNombre() + "', siglas = " + partido.getSiglas() + " where id = " + partido.getId());
+            stmt.executeUpdate("UPDATE partido set nombre = '" + partido.getNombre() + "', siglas = '" + partido.getSiglas() + "' where id = " + partido.getId());
             stmt.close();
 
         } catch(Exception e){
