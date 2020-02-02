@@ -56,7 +56,7 @@ public class MenuPrincipalView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                //TODO: Mostrar inserción de resultados
+                NewResultado.mostrar();
 
             }
 
@@ -67,7 +67,7 @@ public class MenuPrincipalView {
             public void actionPerformed(ActionEvent e) {
 
                 f.setVisible(false);
-                //TODO: Mostrar totalizacion
+                ResultadoListView.mostrar();
 
             }
 

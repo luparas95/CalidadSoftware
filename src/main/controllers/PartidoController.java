@@ -36,6 +36,26 @@ public class PartidoController {
     }
     
     /**
+    * Método que devuelve una lista de partidos sólo su id y su nombre
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    */
+    public static Vector<String> getPartidosForDrowpdowns() {
+        
+        List partidos = PartidoDao.getPartidos();
+        Vector<String> vPartidos = new Vector<String>();
+
+        for (Object partido:partidos) {
+            
+            String data = "" + ((PartidoVo) partido).getId() + " - " + ((PartidoVo) partido).getNombre();
+            vPartidos.add(data);
+
+        }
+        
+        return vPartidos;
+    
+    }
+    
+    /**
     * Método que imprime por pantalla los atributos de el objeto Partido guardado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param idPartido El id del partido a extraer

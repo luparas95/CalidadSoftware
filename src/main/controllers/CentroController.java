@@ -36,6 +36,26 @@ public class CentroController {
     }
     
     /**
+    * Método que devuelve una lista de centros sólo su id y su nombre
+    * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
+    */
+    public static Vector<String> getCentrosForDrowpdowns() {
+        
+        List centros = CentroDao.getCentros();
+        Vector<String> vCentros = new Vector<String>();
+
+        for (Object centro:centros) {
+            
+            String data = "" + ((CentroVo) centro).getId() + " - " + ((CentroVo) centro).getNombre();
+            vCentros.add(data);
+
+        }
+        
+        return vCentros;
+    
+    }
+    
+    /**
     * Método que imprime por pantalla los atributos de el objeto Centro guardado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param idCentro El id del centro a extraer
@@ -60,7 +80,7 @@ public class CentroController {
     }
 
     /**
-    * Método que crea un actualiza un objeto Centro
+    * Método que actualiza un objeto Centro
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
     * @param centro El objeto centro a actualizar
     */
