@@ -10,9 +10,9 @@ import java.sql.*;
 public class ConnectionManager {
 
     static String db = "innodb";
-    static String login = "admin";
-    static String password = "proyectos2019";
-    static String url = "jdbc:mysql://politics.cgj0za0cinrh.us-east-1.rds.amazonaws.com:3306/" + db;
+    static String login = "root";
+    static String password = "secret";
+    static String url = "jdbc:mysql://ec2-34-244-176-137.eu-west-1.compute.amazonaws.com:3306/" + db;
 
     Connection conn = null;
 
