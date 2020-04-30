@@ -1,5 +1,6 @@
 package main.models.dao;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -8,26 +9,28 @@ import java.util.LinkedList;
 import java.util.List;
 
 import main.models.connection.ConnectionManager;
-import main.models.vo.PartidoVo;
+import main.models.vo.CentroVo;
 
 /**
- * Esta clase define los métodos de la BBDD del objeto "Partido"
+ * Esta clase define los métodos de la BBDD del objeto "Centro"
  * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
  */
-public class PartidoDao {
-
+public class CentroDao {
+    
     /**
-    * Método que crea un partido en la BBDD
+    * Método que crea un centro en la BBDD
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param partido Es el objeto partido a insertar en la BBDD
+    * @param centro Es el objeto centro a insertar en la BBDD
     */
-    public static void createPartido(PartidoVo partido) {
+    public static void createCentro(CentroVo centro) {
     
         ConnectionManager connectionManager = new ConnectionManager();
         try {
 
-            Statement stmt = connectionManager.getConnection().createStatement();
-            stmt.executeUpdate("INSERT INTO partido (nombre, siglas) VALUES ('" + partido.getNombre() + "', '" + partido.getSiglas() + "')");
+            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("INSERT INTO centro (nombre, electores) VALUES ('?', ?)");
+            stmt.setString(1, centro.getNombre());
+            stmt.setInt(2, centro.getElectores());
+            stmt.executeUpdate();
             stmt.close();
 
         } catch(Exception e){
@@ -40,22 +43,22 @@ public class PartidoDao {
     }
     
     /**
-    * Método que lista los objetos partido de la BBDD
+    * Método que lista los objetos centro de la BBDD
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @return partidos Lista de partidos de la BBDD
+    * @return centros Lista de centros de la BBDD
     */
-    public static List getPartidos() {
+    public static List getCentros() {
     
         ConnectionManager connectionManager = new ConnectionManager();
-        List partidos = new LinkedList();
+        List centros = new LinkedList();
         try {
 
             Statement stmt = connectionManager.getConnection().createStatement();
-            ResultSet rs = stmt.executeQuery("select * from partido order by nombre");
+            ResultSet rs = stmt.executeQuery("select * from centro order by nombre");
             while(rs.next()) {
 
-                PartidoVo partido = new PartidoVo(rs.getInt("id"), rs.getString("nombre"), rs.getString("siglas"));
-                partidos.add(partido);
+                CentroVo centro = new CentroVo(rs.getInt("id"), rs.getString("nombre"), rs.getInt("electores"));
+                centros.add(centro);
 
             }
             stmt.close();
@@ -67,27 +70,27 @@ public class PartidoDao {
         }
         connectionManager.disconnect();
         
-        return partidos;
+        return centros;
         
     }
     
     /**
-    * Método que muestra el partido de la BBDD que tenga el id suministrado
+    * Método que muestra el centro de la BBDD que tenga el id suministrado
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param idPartido El id del partido a extraer
-    * @return partido Partido de la BBDD con el id suministrado
+    * @param idCentro El id del centro a extraer
+    * @return centro Centro de la BBDD con el id suministrado
     */
-    public static PartidoVo getPartidoById(int idPartido) {
+    public static CentroVo getCentroById(int idCentro) {
     
         ConnectionManager connectionManager = new ConnectionManager();
-        PartidoVo partido = new PartidoVo(0, "", "");
+        CentroVo centro = new CentroVo(0, "", 0);
         try {
 
-            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("select * from partido where id = ?");   
-            stmt.setInt(1, idPartido);
+            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("select * from centro where id = ?");   
+            stmt.setInt(1, idCentro);
             ResultSet rs = stmt.executeQuery();
             rs.next();
-            partido = new PartidoVo(rs.getInt("id"), rs.getString("nombre"), rs.getString("siglas"));
+            centro = new CentroVo(rs.getInt("id"), rs.getString("nombre"), rs.getInt("electores"));
             stmt.close();
 
         } catch(Exception e){
@@ -97,22 +100,25 @@ public class PartidoDao {
         }
         connectionManager.disconnect();
         
-        return partido;
+        return centro;
         
     }
     
     /**
-    * Método que actualiza un partido en la BBDD
+    * Método que actualiza un centro en la BBDD
     * @author: Jose Luis Panadero, Gustavo Adolfo Hernández Quesada, Alvaro Francisco Hernáez Colque
-    * @param partido Es el objeto partido a actualizar en la BBDD
+    * @param centro Es el objeto centro a actualizar en la BBDD
     */
-    public static void updatePartido(PartidoVo partido) {
+    public static void updateCentro(CentroVo centro) {
     
         ConnectionManager connectionManager = new ConnectionManager();
         try {
 
-            Statement stmt = connectionManager.getConnection().createStatement();
-            stmt.executeUpdate("UPDATE partido set nombre = '" + partido.getNombre() + "', siglas = '" + partido.getSiglas() + "' where id = " + partido.getId());
+            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("UPDATE centro set nombre = '?', electores = ? where id = ?");
+            stmt.setString(1, centro.getNombre());
+            stmt.setInt(2, centro.getElectores());
+            stmt.setInt(3, centro.getId());
+            stmt.executeUpdate();
             stmt.close();
 
         } catch(Exception e){

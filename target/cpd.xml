@@ -2,9 +2,9 @@
 <pmd-cpd>
    <duplication lines="22" tokens="112">
       <file column="61" endcolumn="41" endline="55" line="34"
-            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\NewPartidoView.java"/>
+            path="D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\NewPartidoView.java"/>
       <file column="58" endcolumn="41" endline="62" line="41"
-            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdatePartidoView.java"/>
+            path="D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\UpdatePartidoView.java"/>
       <codefragment><![CDATA[        JButton bCrearPartidos = new JButton("Crear Partido");
         JButton bVolver = new JButton("Volver");
         
@@ -30,11 +30,11 @@
    </duplication>
    <duplication lines="17" tokens="100">
       <file column="102" endcolumn="181" endline="56" line="40"
-            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\CentroListView.java"/>
+            path="D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\CentroListView.java"/>
       <file column="99" endcolumn="181" endline="56" line="40"
-            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\PartidoListView.java"/>
+            path="D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\PartidoListView.java"/>
       <file column="103" endcolumn="181" endline="56" line="40"
-            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\ResultadoListView.java"/>
+            path="D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\ResultadoListView.java"/>
       <codefragment><![CDATA[        final Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Electores" }));
         JTable table = new JTable(tableData, cabeceras) {
         

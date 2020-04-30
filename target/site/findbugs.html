@@ -69,7 +69,7 @@
 <th>Missing Classes</th></tr>
 <tr class="b">
 <td>66</td>
-<td>35</td>
+<td>29</td>
 <td>0</td>
 <td>0</td></tr></table></section><section>
 <h2><a name="Files"></a>Files</h2>
@@ -79,16 +79,16 @@
 <th>Bugs</th></tr>
 <tr class="b">
 <td><a href="#main.models.dao.CentroDao">main.models.dao.CentroDao</a></td>
-<td>8</td></tr>
+<td>6</td></tr>
 <tr class="a">
 <td><a href="#main.models.dao.PartidoDao">main.models.dao.PartidoDao</a></td>
-<td>8</td></tr>
+<td>6</td></tr>
 <tr class="b">
 <td><a href="#main.models.dao.ResultadoDao">main.models.dao.ResultadoDao</a></td>
 <td>8</td></tr>
 <tr class="a">
 <td><a href="#main.models.dao.UserDao">main.models.dao.UserDao</a></td>
-<td>10</td></tr>
+<td>8</td></tr>
 <tr class="b">
 <td><a href="#main.views.MenuPrincipalView$5">main.views.MenuPrincipalView$5</a></td>
 <td>1</td></tr></table></section><a name="main.models.dao.CentroDao"></a><section>
@@ -104,50 +104,38 @@
 <td>main.models.dao.CentroDao.createCentro(CentroVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L29">29</a></td>
+<td><a href="./xref/main/models/dao/CentroDao.html#L30">30</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.CentroDao.getCentroById(int) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L88">88</a></td>
+<td><a href="./xref/main/models/dao/CentroDao.html#L91">91</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.CentroDao.getCentroById(int) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L86">86</a></td>
+<td><a href="./xref/main/models/dao/CentroDao.html#L89">89</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.CentroDao.getCentros() may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L54">54</a></td>
+<td><a href="./xref/main/models/dao/CentroDao.html#L57">57</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.CentroDao.getCentros() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L53">53</a></td>
+<td><a href="./xref/main/models/dao/CentroDao.html#L56">56</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.CentroDao.updateCentro(CentroVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L114">114</a></td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>main.models.dao.CentroDao.createCentro(CentroVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L30">30</a></td>
-<td>High</td></tr>
-<tr class="a">
-<td>main.models.dao.CentroDao.updateCentro(CentroVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/CentroDao.html#L115">115</a></td>
-<td>High</td></tr></table></section><a name="main.models.dao.PartidoDao"></a><section>
+<td><a href="./xref/main/models/dao/CentroDao.html#L117">117</a></td>
+<td>Medium</td></tr></table></section><a name="main.models.dao.PartidoDao"></a><section>
 <h3><a name="main.models.dao.PartidoDao"></a>main.models.dao.PartidoDao</h3>
 <table border="0" class="bodyTable">
 <tr class="b">
@@ -160,50 +148,38 @@
 <td>main.models.dao.PartidoDao.createPartido(PartidoVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L29">29</a></td>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L29">29</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.PartidoDao.getPartidoById(int) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L88">88</a></td>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L90">90</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.PartidoDao.getPartidoById(int) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L86">86</a></td>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L88">88</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.PartidoDao.getPartidos() may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L54">54</a></td>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L56">56</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.PartidoDao.getPartidos() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L53">53</a></td>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L55">55</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.PartidoDao.updatePartido(PartidoVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L114">114</a></td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>main.models.dao.PartidoDao.createPartido(PartidoVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L30">30</a></td>
-<td>High</td></tr>
-<tr class="b">
-<td>main.models.dao.PartidoDao.updatePartido(PartidoVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/PartidoDao.html#L115">115</a></td>
-<td>High</td></tr></table></section><a name="main.models.dao.ResultadoDao"></a><section>
+<td><a href="./xref/main/models/dao/PartidoDao.html#L116">116</a></td>
+<td>Medium</td></tr></table></section><a name="main.models.dao.ResultadoDao"></a><section>
 <h3><a name="main.models.dao.ResultadoDao"></a>main.models.dao.ResultadoDao</h3>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -216,49 +192,49 @@
 <td>main.models.dao.ResultadoDao.createResultado(ResultadoVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L31">31</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L31">31</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.ResultadoDao.getResultados() may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L56">56</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L56">56</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.ResultadoDao.getResultados() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L55">55</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L55">55</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.ResultadoDao.getResultadosByCentro(int) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L90">90</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L90">90</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.ResultadoDao.getResultadosByCentro(int) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L88">88</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L88">88</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.ResultadoDao.getResultadosToPrint() may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L122">122</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L122">122</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.ResultadoDao.getResultadosToPrint() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L121">121</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L121">121</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.ResultadoDao.updateResultado(ResultadoVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/ResultadoDao.html#L152">152</a></td>
+<td><a href="./xref/main/models/dao/ResultadoDao.html#L152">152</a></td>
 <td>Medium</td></tr></table></section><a name="main.models.dao.UserDao"></a><section>
 <h3><a name="main.models.dao.UserDao"></a>main.models.dao.UserDao</h3>
 <table border="0" class="bodyTable">
@@ -272,62 +248,50 @@
 <td>main.models.dao.UserDao.checkLogin(String, String) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L145">145</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L152">152</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.UserDao.checkLogin(String, String) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L142">142</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L149">149</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.UserDao.createUser(UserVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L29">29</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L29">29</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.UserDao.getUserById(int) may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L90">90</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L93">93</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.UserDao.getUserById(int) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L88">88</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L91">91</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.UserDao.getUsers() may fail to clean up java.sql.ResultSet on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L54">54</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L57">57</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>main.models.dao.UserDao.getUsers() may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L53">53</a></td>
+<td><a href="./xref/main/models/dao/UserDao.html#L56">56</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>main.models.dao.UserDao.updateUser(UserVo) may fail to clean up java.sql.Statement on checked exception</td>
 <td>EXPERIMENTAL</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE">OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L116">116</a></td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>main.models.dao.UserDao.createUser(UserVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L30">30</a></td>
-<td>High</td></tr>
-<tr class="b">
-<td>main.models.dao.UserDao.updateUser(UserVo) passes a nonconstant String to an execute or addBatch method on an SQL statement</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE">SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE</a></td>
-<td><a href="nullmain/models/dao/UserDao.html#L117">117</a></td>
-<td>High</td></tr></table></section><a name="main.views.MenuPrincipalView5"></a><section>
+<td><a href="./xref/main/models/dao/UserDao.html#L119">119</a></td>
+<td>Medium</td></tr></table></section><a name="main.views.MenuPrincipalView5"></a><section>
 <h3><a name="main.views.MenuPrincipalView.245"></a>main.views.MenuPrincipalView$5</h3>
 <table border="0" class="bodyTable">
 <tr class="a">
@@ -340,7 +304,7 @@
 <td>main.views.MenuPrincipalView$5.actionPerformed(ActionEvent) invokes System.exit(...), which shuts down the entire virtual machine</td>
 <td>BAD_PRACTICE</td>
 <td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#DM_EXIT">DM_EXIT</a></td>
-<td><a href="nullmain/views/MenuPrincipalView.html#L80">80</a></td>
+<td><a href="./xref/main/views/MenuPrincipalView.html#L80">80</a></td>
 <td>Medium</td></tr></table></section>
       </div>
     </div>

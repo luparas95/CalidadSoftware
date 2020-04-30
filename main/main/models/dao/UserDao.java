@@ -26,8 +26,11 @@ public class UserDao {
         ConnectionManager connectionManager = new ConnectionManager();
         try {
 
-            Statement stmt = connectionManager.getConnection().createStatement();
-            stmt.executeUpdate("INSERT INTO usuario (nombre, password, role) VALUES ('" + usuario.getNombre() + "', '" + usuario.getPassword() + "', " + usuario.getRole() + ")");
+            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("INSERT INTO usuario (nombre, password, role) VALUES ('?', '?', ?");
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getPassword());
+            stmt.setInt(3, usuario.getRole());
+            stmt.executeUpdate();
             stmt.close();
 
         } catch(Exception e){
@@ -113,8 +116,12 @@ public class UserDao {
         ConnectionManager connectionManager = new ConnectionManager();
         try {
 
-            Statement stmt = connectionManager.getConnection().createStatement();
-            stmt.executeUpdate("UPDATE usuario set nombre = '" + usuario.getNombre() + "', password = '" + usuario.getPassword() + "', role = " + usuario.getRole() + " where id = " + usuario.getId());
+            PreparedStatement stmt = connectionManager.getConnection().prepareStatement("UPDATE usuario set nombre = '?', password = '?', role = ? where id = ?");
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getPassword());
+            stmt.setInt(3, usuario.getRole());
+            stmt.setInt(4, usuario.getId());
+            stmt.executeUpdate();
             stmt.close();
 
         } catch(Exception e){

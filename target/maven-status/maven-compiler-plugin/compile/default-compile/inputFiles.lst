@@ -1,33 +1,33 @@
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\CentroVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\PartidoVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\ResultadoVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\LoginView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\controllers\CentroController.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\ResultadoToPrintVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdatePartidoView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\constants\Constant.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\controllers\LoginController.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\PartidoDao.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\SessionVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\MenuPartidoView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\NewResultado.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\MenuCentroView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\NewCentroView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\ResultadoListView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\CentroListView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\PartidoListView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\exceptions\VotesOutOfRangeException.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\vo\UserVo.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\MenuPrincipalView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdateCentroView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\controllers\ResultadoController.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\ResultadoDao.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\connection\ConnectionManager.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\UserDao.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\validations\Validations.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\CentroDao.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\NewPartidoView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\exceptions\DuplicateRowException.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\controllers\PartidoController.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\LoadingView.java
-C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdateResultadoView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\NewResultado.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\LoginView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\connection\ConnectionManager.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\PartidoVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\UpdateCentroView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\ResultadoVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\exceptions\VotesOutOfRangeException.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\ResultadoToPrintVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\controllers\CentroController.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\constants\Constant.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\NewPartidoView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\LoadingView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\ResultadoListView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\MenuPrincipalView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\UpdateResultadoView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\dao\ResultadoDao.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\CentroListView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\UpdatePartidoView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\NewCentroView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\PartidoListView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\exceptions\DuplicateRowException.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\CentroVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\controllers\LoginController.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\controllers\ResultadoController.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\validations\Validations.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\dao\CentroDao.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\dao\PartidoDao.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\UserVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\MenuCentroView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\vo\SessionVo.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\views\MenuPartidoView.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\controllers\PartidoController.java
+D:\VIU\CURSO 19-20\42. Calidad de Software\CalidadSoftware\main\main\models\dao\UserDao.java
