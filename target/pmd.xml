@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.21.0" timestamp="2020-04-30T13:48:24.551">
+<file name="C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\CentroDao.java">
+<violation beginline="88" endline="88" begincolumn="13" endcolumn="46" rule="CheckResultSet" ruleset="Best Practices" package="main.models.dao" class="CentroDao" method="getCentroById" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#checkresultset" priority="3">
+Always check the return of one of the navigation method (next,previous,first,last) of a ResultSet.
+</violation>
+</file>
+<file name="C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\PartidoDao.java">
+<violation beginline="88" endline="88" begincolumn="13" endcolumn="46" rule="CheckResultSet" ruleset="Best Practices" package="main.models.dao" class="PartidoDao" method="getPartidoById" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#checkresultset" priority="3">
+Always check the return of one of the navigation method (next,previous,first,last) of a ResultSet.
+</violation>
+</file>
+<file name="C:\Users\Alarcos\git\CalidadSoftware\src\main\models\dao\UserDao.java">
+<violation beginline="90" endline="90" begincolumn="13" endcolumn="46" rule="CheckResultSet" ruleset="Best Practices" package="main.models.dao" class="UserDao" method="getUserById" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#checkresultset" priority="3">
+Always check the return of one of the navigation method (next,previous,first,last) of a ResultSet.
+</violation>
+</file>
+<file name="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdateResultadoView.java">
+<violation beginline="4" endline="4" begincolumn="1" endcolumn="24" rule="UnusedImports" ruleset="Best Practices" package="main.views" class="UpdateResultadoView" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'java.util.Vector'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="41" rule="UnusedImports" ruleset="Best Practices" package="main.views" class="UpdateResultadoView" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'main.controllers.CentroController'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="42" rule="UnusedImports" ruleset="Best Practices" package="main.views" class="UpdateResultadoView" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_bestpractices.html#unusedimports" priority="4">
+Avoid unused imports such as 'main.controllers.PartidoController'
+</violation>
+</file>
+</pmd>

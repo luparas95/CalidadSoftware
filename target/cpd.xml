@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+   <duplication lines="22" tokens="112">
+      <file column="61" endcolumn="41" endline="55" line="34"
+            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\NewPartidoView.java"/>
+      <file column="58" endcolumn="41" endline="62" line="41"
+            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\UpdatePartidoView.java"/>
+      <codefragment><![CDATA[        JButton bCrearPartidos = new JButton("Crear Partido");
+        JButton bVolver = new JButton("Volver");
+        
+        bCrearPartidos.setBounds(50, 310, 130, 30);
+        bVolver.setBounds(200, 310, 130, 30);
+        
+        bCrearPartidos.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                
+                if (!Validations.cadenaValida(nombreField.getText())) {
+                
+                    JOptionPane.showMessageDialog(f, "Introduzca un nombre");
+                
+                } else if (!Validations.cadenaValida(siglasField.getText())) {
+                
+                    JOptionPane.showMessageDialog(f, "Introduzca unas siglas");
+                
+                } else {
+                
+                    f.setVisible(false);
+                    LoadingView.mostrar();]]></codefragment>
+   </duplication>
+   <duplication lines="17" tokens="100">
+      <file column="102" endcolumn="181" endline="56" line="40"
+            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\CentroListView.java"/>
+      <file column="99" endcolumn="181" endline="56" line="40"
+            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\PartidoListView.java"/>
+      <file column="103" endcolumn="181" endline="56" line="40"
+            path="C:\Users\Alarcos\git\CalidadSoftware\src\main\views\ResultadoListView.java"/>
+      <codefragment><![CDATA[        final Vector cabeceras = new Vector(Arrays.asList(new String[] { "Id", "Nombre", "Electores" }));
+        JTable table = new JTable(tableData, cabeceras) {
+        
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public boolean isCellEditable(int row, int column) {                
+                    return false;               
+            };
+        
+        };
+        
+        table.addMouseListener(new MouseAdapter() {
+        
+            public void mouseClicked(MouseEvent e) {
+            
+                if (e.getClickCount() == 2 && (SessionVo.getInstance().getUser().getRole() == Constant.ROLE_ADMINISTRADOR || SessionVo.getInstance().getUser().getRole() == Constant.ROLE_SECRETARIO_ELECTORAL)) {]]></codefragment>
+   </duplication>
+</pmd-cpd>
