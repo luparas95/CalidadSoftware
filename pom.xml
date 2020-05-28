@@ -5,6 +5,14 @@
 	<groupId>CalidadSoftware</groupId>
 	<artifactId>CalidadSoftware</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<properties>
+ 		<sonar.projectKey>luparas95_CalidadSoftware</sonar.projectKey>
+  		<sonar.organization>luparas95</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  		<sonar.login>f4e2c316c4ad79fac21173806fb98391050f6c4d</sonar.login>
+	</properties>
+	
 	<build>
 		<sourceDirectory>main</sourceDirectory>
 		<plugins>
@@ -63,7 +71,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
-
-
 </project>
 
